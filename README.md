@@ -29,13 +29,13 @@ This exercise doesn't need any aditional software.
 Clone this repository:
   
 `````
-git clone <Repo address> /FolderName
+git clone https://github.com/LLuisPP/S2.2-E_commerce-N.III.git Sprint2-2-ecommerce
 `````
 
 Navigate to cloned folder:
 
 `````
-cd ../FolderName
+cd Sprint2-2-ecommerce
 `````
 </div>
 
