@@ -1,3 +1,5 @@
+let products = [];
+
 fetch('./data/products.json')
     .then(response => {
         if(!response.ok) {
@@ -7,7 +9,7 @@ fetch('./data/products.json')
     })
     .then(data => {
         console.log(data); // Vista en consola, quitar mas adelante.
-        let prducts = data;
+        products = data;
     })
     .catch(error => {
         console.error('Error loading prducts:', error);
@@ -27,11 +29,19 @@ var total = 0;
 function buy(id) {
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array
+    for (let product of products) {
+        if (product.id === id)
+        {
+            console.log(product.name);
+            cart.push(product);
+            // console.log(cart);
+            break;
+        }
+    }
 }
 
 // Exercise 2
 function cleanCart() {
-
 }
 
 // Exercise 3
