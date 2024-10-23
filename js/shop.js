@@ -32,9 +32,10 @@ function buy(id) {
     for (let product of products) {
         if (product.id === id)
         {
-            console.log(product.name);
             cart.push(product);
+            cart.forEach(product => console.log(product.name));
             // console.log(cart);
+            calculateTotal(cart);
             break;
         }
     }
@@ -42,11 +43,23 @@ function buy(id) {
 
 // Exercise 2
 function cleanCart() {
+    let cartContent = document.getElementById('cart_list');
+    if (cartContent) {
+        cartContent.innerHTML = '';
+    }
+    total = document.getElementById('total_price');
+    if (total != 0) {
+        total = 0;
+        total_price.innerHTML = total;
+    }
 }
 
 // Exercise 3
-function calculateTotal() {
+function calculateTotal(cart) {
     // Calculate total price of the cart using the "cartList" array
+    total = cart.reduce((accumulated, product) => accumulated + product.price, 0);
+    // console.log(`Total value: ${total}`);
+    total_price.innerHTML = total;
 }
 
 // Exercise 4
